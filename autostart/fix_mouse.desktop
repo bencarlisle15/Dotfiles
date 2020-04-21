@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=xrandr --output eDP-1 --scale 0.9999x0.9999
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Fix Mouse
+Name=Fix Mouse
+Comment[en_US]=
+Comment=
