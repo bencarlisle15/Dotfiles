@@ -7,7 +7,7 @@ LINE=$((LINE+1));sudo apt-get -y install libcurl4-openssl-dev curl libsqlite3-de
 LINE=$((LINE+1));curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add - || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo apt-get update || { echo $LINE ; exit 1; };
-LINE=$((LINE+1));sudo apt-get install -y regolith-desktop net-tools atom dkms chromium-browser dolphin-emu virtualbox variety dmenu filelight exfalso pinta rhythmbox wireshark texmaker golang-go audacity snapd steam gimp sound-juicer brave-browser conky deluge adb fastboot libreoffice python3-pip lm-sensors nmap exiftool libegl1-mesa libxcb-xtest0 || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));sudo apt-get install -y regolith-desktop net-tools atom dkms chromium-browser dolphin-emu virtualbox variety dmenu filelight exfalso pinta rhythmbox wireshark texmaker golang-go audacity snapd steam gimp sound-juicer brave-browser conky deluge adb fastboot libreoffice python3-pip lm-sensors nmap exiftool libegl1-mesa libgl1-mesa-glx libxcb-xtest0 || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));apm install platformio-ide-terminal || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));pip3 install i3ipc || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo snap install --classic dmd || { echo $LINE ; exit 1; };
@@ -49,12 +49,13 @@ LINE=$((LINE+1));(printf '[Desktop Entry]\nType=Application\nExec=xmodmap -e "ke
 LINE=$((LINE+1));printf '%s\n%s\n' "echo Hello Friend" "$(cat ~/.bashrc)" > ~/.bashrc || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));printf '%s\n%s\n' "bind '\"\e[1;5D\" backward-word'" "bind '\"\e[1;5C\" forward-word'" >> ~/.bashrc || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));gsettings set org.gnome.desktop.screensaver picture-uri /usr/share/backgrounds/El_Haouaria_by_Nusi_Nusi.jpg || { echo $LINE ; exit 1; };
-LINE=$((LINE+1));brave-browser http://www.displaylink.com/downloads/file?id=1369 https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?hl=en-US https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck?hl=en-US > /dev/null 2>&1;
+LINE=$((LINE+1));mkdir ~/.config/regolith/;
 LINE=$((LINE+1));mkdir ~/.config/regolith/i3/;
 LINE=$((LINE+1));mkdir ~/.config/regolith/i3xrocks/;
-LINE=$((LINE+1));cp i3/config ~/.config/regolith/i3/config || { echo $LINE ; exit 1; };
-LINE=$((LINE+1));cp i3xrocks/config ~/.config/regolith/i3xrocks/config || { echo $LINE ; exit 1; };
-LINE=$((LINE+1));sudo cp i3extras/* /usr/share/i3xrocks/ || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));cp ~/Dotfiles/i3/config ~/.config/regolith/i3/config || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));cp ~/Dotfilesi3xrocks/config ~/.config/regolith/i3xrocks/config || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));sudo mkdir /usr/share/i3xrocks/;
+LINE=$((LINE+1));sudo cp ~/Dotfiles/i3extras/* /usr/share/i3xrocks/ || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo "set enable-keypad on" >> ~/.inputrc;
 LINE=$((LINE+1));sudo apt-get update || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo apt-get -y upgrade || { echo $LINE ; exit 1; };
@@ -62,3 +63,4 @@ LINE=$((LINE+1));sudo apt-get -y dist-upgrade || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo apt-get -y autoremove || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo 'ENTER THE COMMAND: onedrive --resync --syncdir ~' || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo "SUCESS";
+LINE=$((LINE+1));nohup brave-browser http://www.displaylink.com/downloads/file?id=1369 https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?hl=en-US https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck?hl=en-US > /dev/null 2>&1&
