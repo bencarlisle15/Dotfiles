@@ -7,7 +7,7 @@ LINE=$((LINE+1));sudo apt-get -y install libcurl4-openssl-dev curl libsqlite3-de
 LINE=$((LINE+1));curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add - || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo apt-get update || { echo $LINE ; exit 1; };
-LINE=$((LINE+1));sudo apt-get install -y regolith-desktop net-tools atom dkms chromium-browser dolphin-emu virtualbox variety dmenu filelight exfalso pinta rhythmbox wireshark texmaker golang-go audacity snapd steam gimp sound-juicer brave-browser conky deluge adb fastboot libreoffice python3-pip lm-sensors nmap exiftool libegl1-mesa libgl1-mesa-glx libxcb-xtest0 || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));sudo apt-get install -y regolith-desktop net-tools atom dkms chromium dolphin-emu virtualbox variety dmenu filelight exfalso pinta rhythmbox wireshark texmaker golang-go audacity snapd steam gimp sound-juicer brave-browser conky deluge adb fastboot libreoffice python3-pip lm-sensors nmap exiftool libegl1-mesa libgl1-mesa-glx libxcb-xtest0 || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));apm install platformio-ide-terminal || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));pip3 install i3ipc || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo snap install --classic dmd || { echo $LINE ; exit 1; };
@@ -53,7 +53,7 @@ LINE=$((LINE+1));mkdir ~/.config/regolith/;
 LINE=$((LINE+1));mkdir ~/.config/regolith/i3/;
 LINE=$((LINE+1));mkdir ~/.config/regolith/i3xrocks/;
 LINE=$((LINE+1));cp ~/Dotfiles/i3/config ~/.config/regolith/i3/config || { echo $LINE ; exit 1; };
-LINE=$((LINE+1));cp ~/Dotfilesi3xrocks/config ~/.config/regolith/i3xrocks/config || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));cp ~/Dotfiles/i3xrocks/config ~/.config/regolith/i3xrocks/config || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo mkdir /usr/share/i3xrocks/;
 LINE=$((LINE+1));sudo cp ~/Dotfiles/i3extras/* /usr/share/i3xrocks/ || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo "set enable-keypad on" >> ~/.inputrc;
