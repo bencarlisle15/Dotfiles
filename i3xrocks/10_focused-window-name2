@@ -1,0 +1,7 @@
+# Show title of focused window
+[focused-window-name2]
+label= 
+interval=1
+short_length=10
+#filter_list=evince libreoffice # uncomment to show only for these window instances
+#short_length=10 # uncomment to change maximum size of shortened text
