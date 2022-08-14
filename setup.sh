@@ -4,6 +4,7 @@ LINE=$((LINE+1));sudo apt update || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo apt -y upgrade || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));wget -qO - https://regolith-desktop.org/regolith.key | gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" | sudo tee /etc/apt/sources.list.d/regolith.list || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));sudo apt update || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo apt-get install -y regolith-desktop x11-xserver-utils feh cron i3xrocks-battery i3xrocks-memory i3xrocks-openvpn i3xrocks-volume i3xrocks-wifi || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));git clone https://github.com/bencarlisle15/dynamic-wallpaper.git
 LINE=$((LINE+1));cd dynamic-wallpaper && ./install.sh && cd .. || { echo $LINE ; exit 1; };
