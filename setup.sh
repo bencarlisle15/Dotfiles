@@ -11,6 +11,7 @@ LINE=$((LINE+1));mkdir ~/.config/regolith2
 LINE=$((LINE+1));echo i3-wm.mod: Mod1 > ~/.config/regolith2/Xresources || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo i3-wm.alt: Mod4 >> ~/.config/regolith2/Xresources || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo regolith.wallpaper.options: zoom >> ~/.config/regolith2/Xresources || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));echo regolith.lockscreen.wallpaper.options: zoom >> ~/.config/regolith2/Xresources || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo regolith.wallpaper.file: /usr/share/dynamic-wallpaper/images/lake/23.jpg >> ~/.config/regolith2/Xresources || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));/usr/bin/dwall -s lake|| { echo $LINE ; exit 1; };
 LINE=$((LINE+1));(crontab -l 2>/dev/null; echo "0 * * * * env TERM=$TERM PATH=$PATH DISPLAY=$DISPLAY DESKTOP_SESSION=$DESKTOP_SESSION DBUS_SESSION_BUS_ADDRESS=\"$DBUS_SESSION_BUS_ADDRESS\" /usr/bin/dwall -s lake") | crontab - || { echo $LINE ; exit 1; };
