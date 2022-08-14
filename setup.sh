@@ -6,7 +6,7 @@ LINE=$((LINE+1));wget -qO - https://regolith-desktop.org/regolith.key | gpg --de
 LINE=$((LINE+1));echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" | sudo tee /etc/apt/sources.list.d/regolith.list || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));sudo apt-get install -y regolith-desktop x11-xserver-utils feh cron i3xrocks-battery i3xrocks-memory i3xrocks-openvpn i3xrocks-volume i3xrocks-wifi || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));git clone https://github.com/bencarlisle15/dynamic-wallpaper.git
-LINE=$((LINE+1));./dynamic-wallpaper/install.sh || { echo $LINE ; exit 1; };
+LINE=$((LINE+1));cd dynamic-wallpaper && ./install.sh && cd .. || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));mkdir ~/.config/regolith2
 LINE=$((LINE+1));echo i3-wm.mod: Mod1 > ~/.config/regolith2/Xresources || { echo $LINE ; exit 1; };
 LINE=$((LINE+1));echo i3-wm.alt: Mod4 >> ~/.config/regolith2/Xresources || { echo $LINE ; exit 1; };
